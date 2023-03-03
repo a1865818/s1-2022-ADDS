@@ -4,6 +4,9 @@
 #include<iostream>
 using namespace std;
 char hmove;
+Human::Human() {
+    name="Human";
+}
 char Human::makeMove() {
     cout<<"Enter move:";
     cin>>hmove;

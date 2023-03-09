@@ -1,5 +1,5 @@
 #include"Move.h"
-
+#include<string>
 using namespace std;
 Move::Move(){
 }

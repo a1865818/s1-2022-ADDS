@@ -1,8 +1,4 @@
 #include"Referee.h"
-#include"Player.h"
-#include"Computer.h"
-#include"Human.h"
-#include<string>
 #include<iostream>
 using namespace std;
 Referee::Referee(){

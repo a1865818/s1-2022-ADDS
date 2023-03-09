@@ -5,8 +5,10 @@ string hmove;
 Human::Human() {
     name="Human";
 }
+Human::Human(string hname){
+    name=hname;
+}
 Move* Human::makeMove() {
-    
     cout<<"Enter move:";
     cin>>hmove;
     Move* newMove1 = new Move(hmove);
@@ -15,6 +17,4 @@ Move* Human::makeMove() {
 string Human::getName() {
     return name;
 }
-Human::Human(string hname){
-    name=hname;
-}
+

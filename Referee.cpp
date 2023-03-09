@@ -1,9 +1,7 @@
 #include"Referee.h"
 
 using namespace std;
-Referee::Referee(){
 
-}
 Player* Referee::refGame(Player * p1, Player * p2) {
     string player1 = p1->makeMove()->getName();
     string player2 = p2->makeMove()->getName();

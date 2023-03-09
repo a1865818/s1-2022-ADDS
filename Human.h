@@ -9,4 +9,3 @@ public:
     char makeMove( );
     std::string getName( ) ;
 };
-

@@ -18,4 +18,3 @@ string Human::getName() {
 Human::Human(string hname){
     name=hname;
 }
-

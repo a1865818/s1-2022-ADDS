@@ -1,10 +1,9 @@
-#include<string>
-#include<iostream>
-#include"Player.h"
 #include"Computer.h"
 #include"Referee.h"
 #include"Human.h"
+
 using namespace std;
+
 // extern Player* Referee::refGame(Player * p1, Player * p2) ;
 int main () {
     Referee* ref = new Referee;

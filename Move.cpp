@@ -1,7 +1,5 @@
 #include"Move.h"
-#include"Player.h"
-#include<string>
-#include<iostream>
+
 using namespace std;
 Move::Move(){
 }

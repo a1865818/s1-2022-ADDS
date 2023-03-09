@@ -11,8 +11,8 @@ Player* Referee::refGame(Player * p1, Player * p2) {
     string List_Move[8]={"Rock","Paper","Scissors","Robot","Zombie","Monkey", "Ninja","Pirate"};
     for (int i = 0; i < 8; i++)
 {
-    if (player1 == List_Move[i]) po1=i;
-    if (player2 == List_Move[i]) po2=i;
+        if (player1 == List_Move[i]) po1=i;
+        if (player2 == List_Move[i]) po2=i;
 }
     if (po1<=2 && po2<=2)
     {

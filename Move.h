@@ -1,4 +1,5 @@
-#pragma once
+#ifndef MOVE_H
+#define MOVE_H
 #include<iostream>
 class Move {
     private:
@@ -9,3 +10,4 @@ class Move {
         Move(std::string n);
         std::string getName();
 };
+#endif

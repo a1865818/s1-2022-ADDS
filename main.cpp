@@ -14,7 +14,8 @@ int main () {
     if (winner == nullptr)
     {
         cout<<"It's a Tie";
-    }else{
+    }
+    else{
         cout<<winner->getName()<<" Wins"<<endl;
     }
     

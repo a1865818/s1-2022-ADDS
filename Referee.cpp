@@ -8,9 +8,8 @@ Player* Referee::refGame(Player * p1, Player * p2) {
     int po1,po2;
     string player1 = p1->makeMove()->getName();
     string player2 = p2->makeMove()->getName();
-    string List_Move[8]={"Rock","Paper","Scissors","Robot","Zombie","Monkey",
-    "Ninja","Pirate"};
-    for (int i = 0; i <= 8; i++)
+    string List_Move[8]={"Rock","Paper","Scissors","Robot","Zombie","Monkey", "Ninja","Pirate"};
+    for (int i = 0; i < 8; i++)
 {
     if (player1 == List_Move[i]) po1=i;
     if (player2 == List_Move[i]) po2=i;

@@ -1,9 +1,7 @@
-#ifndef COMPUTER_H
-#define COMPUTER_H
-#include"Player.h"
+#include "Player.h"
 
 class Computer : public Player {
-    std::string getName( ) ;
-    Move* makeMove( );
+public:
+    Move* makeMove();
+    std::string getName();
 };
-#endif

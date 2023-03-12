@@ -1,11 +1,13 @@
-#include"Move.h"
+#include "Move.h"
 
-using namespace std;
-Move::Move(){
+Move::Move() {
+
 }
-Move::Move(string n){
-    name = n;
+
+Move::Move(string s) {
+    name = s;
 }
+
 string Move::getName() {
     return name;
 }

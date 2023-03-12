@@ -1,23 +1,14 @@
-#include"Computer.h"
-#include"Referee.h"
-#include"Human.h"
+#include "Referee.h"
+#include "Human.h"
+#include "Computer.h"
 
-using namespace std;
+int main() {
+    Player* Hum = new Human("Dat");
+    Player* Com = new Human("Minh");
+    Referee* Ref = new Referee;
 
-// extern Player* Referee::refGame(Player * p1, Player * p2) ;
-int main () {
-    Referee* ref = new Referee;
-    Player* human = new Human("Minh");
-    Player* com = new Human("Nguyen");
-
-    Player* winner = ref->refGame(human, com);
-    if (winner == nullptr)
-    {
-        cout<<"It's a Tie";
-    }else{
-        cout<<winner->getName()<<" Wins"<<endl;
-    }
-    
+    Player* Winner = Ref->refGame(Hum, Com);
+    if (Winner == nullptr) cout << "It's a Tie";
+    else cout << Winner->getName() << " Wins";
     return 0;
-
 }

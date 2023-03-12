@@ -1,13 +1,13 @@
-#ifndef MOVE_H
-#define MOVE_H
-#include<iostream>
+#pragma once
+#include <iostream>
+
+using namespace std;
+
 class Move {
-    private:
-        std::string name;
-       
-    public:
-        Move();
-        Move(std::string n);
-        std::string getName();
+private:
+    string name;
+public:
+    Move();
+    Move(string s);
+    string getName();
 };
-#endif

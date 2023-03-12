@@ -1,9 +1,10 @@
-#include"Computer.h"
-using namespace std;
-string Computer::getName() {
-    return "Computer";
-}
+#include "Computer.h"
+
 Move* Computer::makeMove() {
     Move* newMove2 = new Move("Rock");
-    return newMove2 ;
+    return newMove2;
+}
+
+std::string Computer::getName() {
+    return "Computer";
 }

@@ -1,35 +1,33 @@
-#include"Referee.h"
+#include "Referee.h"
 
-using namespace std;
+Player* Referee::refGame(Player* player1, Player* player2) {
+    string p1 = player1->makeMove()->getName();
+    string p2 = player2->makeMove()->getName();
 
-Player* Referee::refGame(Player * p1, Player * p2) {
-    string player1 = p1->makeMove()->getName();
-    string player2 = p2->makeMove()->getName();
-    string List_Move[8]={"Rock","Paper","Scissors","Robot","Zombie","Monkey", "Ninja","Pirate"};
-    for (int i = 0; i < 8; i++)   
-{
-        if (player1 == List_Move[i]) po1=i;
-        if (player2 == List_Move[i]) po2=i;
+    string moveList[8] = {"Rock", "Paper", "Scissors", "Robot", "Zombie", "Monkey", "Ninja", "Pirate"};
+
+    int pos1, pos2;
+
+    for (int i = 0; i < 8; ++i) {
+        if (p1 == moveList[i]) pos1 = i;
+        if (p2 == moveList[i]) pos2 = i;
+    }
+
+    if (pos1 <= 2 && pos2 <= 2) { //RPS
+        if (pos1 == pos2) return nullptr;
+        else if (pos1 == pos2 + 1 || pos1 == pos2 - 2) {
+            return player1;
+        }
+        else return player2;
+    }
+    else if (pos1 >= 3 && pos2 >= 3) { //5
+        if (pos1 == pos2) return nullptr;
+        else if ((pos1 - pos2) % 2 == 0) {
+            return pos1 > pos2 ? player1 : player2; // if (pos1 > pos2) return player else return player2;
+        }
+        else  return pos1 > pos2 ? player2 : player1;
+    }
+    else {
+        return nullptr;
+    }
 }
-    if (po1<=2 && po2<=2)
-    {
-        if (po1==po2) return nullptr;
-        else if (po1 == po2 + 1 || po1 == po2 - 2 ){
-            return p1;
-        }else return p2;
-    }    
-    else if (po1 >= 3 && po2 >=3){
-        if (po1 == po2) return nullptr;
-        else if ((po1 -po2) % 2 == 0){
-            return po1 > po2 ? p1 : p2;
-        }else return po1 > po2 ? p2 : p1;
-
-    }else return nullptr;
-}
-
-
-
-
-
-
-

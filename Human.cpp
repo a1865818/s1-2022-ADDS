@@ -1,10 +1,10 @@
 #include "Human.h"
 
 Human::Human() {
-    this->name = "Human";
+    name = "Human";
 }
 Human::Human(string hname){
-    this->name = hname;
+    name = hname;
 }
 
 Move* Human::makeMove() {

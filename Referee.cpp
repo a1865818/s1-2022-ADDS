@@ -13,14 +13,14 @@ Player* Referee::refGame(Player* player1, Player* player2) {
         if (p2 == moveList[i]) pos2 = i;
     }
 
-    if (pos1 <= 2 && pos2 <= 2) { //RPS
+    if (pos1 <= 2 && pos2 <= 2) {
         if (pos1 == pos2) return nullptr;
         else if (pos1 == pos2 + 1 || pos1 == pos2 - 2) {
             return player1;
         }
         else return player2;
     }
-    else if (pos1 >= 3 && pos2 >= 3) { //5
+    else if (pos1 >= 3 && pos2 >= 3) { 
         if (pos1 == pos2) return nullptr;
         else if ((pos1 - pos2) % 2 == 0) {
             return pos1 > pos2 ? player1 : player2; // if (pos1 > pos2) return player else return player2;

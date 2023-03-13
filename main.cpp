@@ -3,8 +3,8 @@
 #include "Computer.h"
 
 int main() {
-    Player* Hum = new Human("Dat");
-    Player* Com = new Human("Minh");
+    Player* Hum = new Human("Minh");
+    Player* Com = new Human("Nguyen");
     Referee* Ref = new Referee;
 
     Player* Winner = Ref->refGame(Hum, Com);

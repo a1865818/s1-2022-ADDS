@@ -4,8 +4,8 @@ Move::Move() {
 
 }
 
-Move::Move(string s) {
-    name = s;
+Move::Move(string nameMove) {
+    name = nameMove;
 }
 
 string Move::getName() {

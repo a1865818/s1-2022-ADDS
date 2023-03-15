@@ -8,6 +8,6 @@ private:
     string name;
 public:
     Move();
-    Move(string s);
+    Move(string nameMove);
     string getName();
 };

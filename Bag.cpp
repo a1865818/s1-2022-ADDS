@@ -10,13 +10,13 @@ void Bag<T>::addItem(T item){
     itemName.push_back(item);
 }
 template <class T>
-void Bag<T>::removeItem(T id){
+void Bag<T>::removeItem(){
     srand(time(NULL));
-    id = rand() % itemName.size() + 1;
+    int id = rand() % itemName.size() + 1;
     itemName.erase(itemName.begin()+id);
 }
 template <class T>
-std::string Bag<T>::returnItem(T item){
+std::string Bag<T>::returnItem(){
     return itemName;
 }
 template class Bag<int>;

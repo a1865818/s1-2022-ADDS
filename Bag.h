@@ -7,7 +7,7 @@ class Bag{
         T id;
     public:
         void addItem(T item);
-        void removeItem(T id);
-        std::string returnItem(T item);
+        void removeItem();
+        std::string returnItem();
         
 };

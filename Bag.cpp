@@ -5,8 +5,9 @@
 #include<vector>
 using namespace std;
 template <class T>
-void Bag<T>::addItem(T itemName){
-    itemName.push_back(itemName);
+void Bag<T>::addItem(T item){
+   
+    itemName.push_back(item);
 }
 template <class T>
 void Bag<T>::removeItem(T id){
@@ -15,7 +16,7 @@ void Bag<T>::removeItem(T id){
     itemName.erase(itemName.begin()+id);
 }
 template <class T>
-std::string Bag<T>::returnItem(T itemName){
+std::string Bag<T>::returnItem(T item){
     return itemName;
 }
 template class Bag<int>;

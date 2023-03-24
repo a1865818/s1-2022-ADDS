@@ -6,8 +6,8 @@ class Bag{
         vector<T> itemName;
         T id;
     public:
-        void addItem(T itemName);
+        void addItem(T item);
         void removeItem(T id);
-        std::string returnItem(T itemName);
+        std::string returnItem(T item);
         
 };

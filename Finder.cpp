@@ -5,10 +5,9 @@
     vector<int> Finder::findSubstrings(string s1, string s2) {
 
         vector<int> result;
-        string curSubstr = "";
+        size_t found = s1.find(s2.substr(0,1));    
         for(size_t i = 0; i < s2.size(); i++) {
-            curSubstr += s2[i];
-            size_t found = s1.find(curSubstr);            
+            size_t found = s1.find(s2.substr(0,i), found);    
             if (found != string::npos) {
                 result.push_back(found);
             } else {
@@ -17,7 +16,3 @@
         }
         return result;
     }
-
-
-
-   

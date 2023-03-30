@@ -18,14 +18,6 @@
         return result;
     }
 
-int main () {
-    
-        Finder finder;
-        vector<int> result = finder.findSubstrings("4634554567", "45689");
-        for (auto i : result) {
-            cout << i << endl;
-        }
-        return 0;
-}
+
 
    

@@ -14,25 +14,18 @@ int main(){
     getline(cin, input);
     stringstream ss(input);
     vector<int> list;
+    // int start = list[0];
+    // int end = list[list.size() - 1];
     int num;
     while (ss >> num) {
         list.push_back(num);
     }
-    
-    //check if input correct
-    for (int i = 0; i < list.size(); i++){
-        cout << list[i] << " ";
-    }
-    cout << endl;
-    
     //perform qsort
     QuickSort qsort;
     list = qsort.sort(list);
-
     //perform binsearch
     RecursiveBinarySearch binSearch;
     bool a = binSearch.search(list, 1);
-
     //print sorted list and binsearch
     if (a == true){
         cout << "true" << " ";

@@ -5,7 +5,6 @@ class QuickSort: public Sort{
     public:
         std::vector<int> sort(std::vector<int> list);
         // void swap(int *a, int *b);
-        // int partition(std::vector<int> list, int low, int high);
 };
 
 

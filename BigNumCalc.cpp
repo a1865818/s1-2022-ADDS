@@ -1,9 +1,6 @@
 #include "BigNumCalc.h"
 #include <algorithm> 
 
-BigNumCalc::BigNumCalc() {}
-BigNumCalc::~BigNumCalc() {}
-
 std::list<int> BigNumCalc::buildBigNum(std::string numString) {
     std::list<int> bigNumList;
     for (char& c : numString){

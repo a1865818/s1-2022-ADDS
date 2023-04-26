@@ -1,6 +1,6 @@
 #include "LinkedList.h"
 #include <iostream>
-
+#include <limits>
 
 LinkedList::LinkedList() {
     head = nullptr;
@@ -59,18 +59,17 @@ bool LinkedList::deletePosition(int pos) {
 
 int LinkedList::get(int pos) {
     if (head == nullptr || pos < 1) {
-        return -1;
+        return std::numeric_limits<int>::max();
     }
     Node* current = head;
     for (int i = 1; i < pos && current != nullptr; i++) {
         current = current->getNext();
     }
     if (current == nullptr) {
-        return -1;
+        return std::numeric_limits<int>::max();
     }
     return current->getData();
 }
-
 
 int LinkedList::search(int target) {
     Node* current = head;
@@ -84,9 +83,8 @@ int LinkedList::search(int target) {
     }
     return -1;
     }
-
     void LinkedList::printList() {
-        if (head == nullptr) {
+    if (head == nullptr) {
         return;
     }
     Node* current = head;
@@ -94,9 +92,9 @@ int LinkedList::search(int target) {
     while (current != nullptr) {
         std::cout << current->getData();
         current = current->getNext();
-        if (current != nullptr) {
-            std::cout << " ";
-        }
+    if (current != nullptr) {
+        std::cout << " ";
+    }
     }
     std::cout << "]";
-    }
+}

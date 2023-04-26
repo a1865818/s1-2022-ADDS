@@ -1,6 +1,6 @@
 #include "LinkedList.h"
 #include <iostream>
-#include <limits>
+
 
 LinkedList::LinkedList() {
     head = nullptr;
@@ -86,17 +86,17 @@ int LinkedList::search(int target) {
     }
 
     void LinkedList::printList() {
-    if (head == nullptr) {
-    return;
+        if (head == nullptr) {
+        return;
     }
     Node* current = head;
     std::cout << "[";
     while (current != nullptr) {
-    std::cout << current->getData();
-    current = current->getNext();
-    if (current != nullptr) {
-    std::cout << " ";
-    }
+        std::cout << current->getData();
+        current = current->getNext();
+        if (current != nullptr) {
+            std::cout << " ";
+        }
     }
     std::cout << "]";
     }

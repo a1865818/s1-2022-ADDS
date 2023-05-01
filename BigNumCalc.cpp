@@ -8,25 +8,26 @@ std::list<int> BigNumCalc::buildBigNum(std::string numString) {
     }
         return bigNumList;
 }
-
 std::list<int> BigNumCalc::add(std::list<int> num1, std::list<int> num2) {
     std::list<int> result;
-    while (num1.size() < num2.size()) {
-        num1.push_front(0);
-    }
+    int carry = 0;
     while (num1.size() > num2.size()) {
         num2.push_front(0);
     }
-    {
-    int carry = 0;   
-   while( num1.size() > 1 && num2.size() > 1){
-    int sumDigit = num1.back() + num2.back() + carry;
-    carry = sumDigit / 10;
-    result.push_front(sumDigit % 10);
-    num1.pop_back();
-    num2.pop_back();
+    while (num1.size() < num2.size()) {
+        num1.push_front(0);
     }
-   }
+    while (!num1.empty()) {
+        int sumDigit = num1.back() + num2.back() + carry;
+        carry = sumDigit / 10;
+        result.push_front(sumDigit % 10);
+        num1.pop_back();
+        num2.pop_back();
+    }
+    if (carry != 0) {
+        result.push_front(carry);
+    }
+    return result;
 }
 
 std::list<int> BigNumCalc::sub(std::list<int> num1, std::list<int> num2) {

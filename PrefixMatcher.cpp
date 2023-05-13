@@ -1,8 +1,6 @@
 #include "PrefixMatcher.h"
 
-TrieNode::TrieNode() {
-    routerNumber = -1;  // Invalid router number
-}
+
 
 PrefixMatcher::PrefixMatcher() {
     root = new TrieNode();

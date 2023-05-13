@@ -2,6 +2,8 @@
 
 TrieNode::TrieNode() {
     isEndOfWord = false;
+    routerNumber = -1;  // Invalid router number
+
 }
 
 Autocomplete::Autocomplete() {

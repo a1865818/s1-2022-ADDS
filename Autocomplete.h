@@ -8,7 +8,7 @@ class TrieNode {
 public:
     std::unordered_map<char, TrieNode*> children;
     bool isEndOfWord;
-
+    int routerNumber;
     TrieNode();
 
 };

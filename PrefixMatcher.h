@@ -1,16 +1,9 @@
 #ifndef PREFIXMATCHER_H
 #define PREFIXMATCHER_H
-
+#include"Autocomplete.h"
 #include <string>
-#include <unordered_map>
 
-class TrieNode {
-public:
-    std::unordered_map<char, TrieNode*> children;
-    int routerNumber;
 
-    TrieNode();
-};
 class PrefixMatcher {
 private:
     TrieNode* root;

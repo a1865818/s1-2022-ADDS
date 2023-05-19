@@ -1,6 +1,6 @@
 #ifndef HEAP_H
 #define HEAP_H
-
+#include<iostream>
 #include <vector>
 #include <cmath> // for floor()
 
@@ -56,15 +56,18 @@ Heap<T>::Heap(std::vector<T> start_values) {
 
 template <typename T>
 void Heap<T>::insert(T value) {
-   values.push_back(value); // Insert the new value at the end of the vector
-  int inserted_index = values.size() - 1; // Index of the inserted value
+   // TO BE IMPLEMENTED
+   values.push_back(value);
+    int index = values.size()-1;
+    int parent_index = floor((index-1)/2);
+    while (index > 0 && values.at(index) < values.at(parent_index)){
+        T temp = values.at(index);
+        values.at(index) = values.at(parent_index);
+        values.at(parent_index) = temp;
+        index = parent_index;
+        parent_index = floor((index-1)/2);
+    }
 
-  // Move the inserted value up the heap while it's smaller than its parent
-  while (inserted_index > 0 && values[inserted_index] < values[(inserted_index - 1) / 2]) {
-    // Swap the inserted value with its parent
-    std::swap(values[inserted_index], values[(inserted_index - 1) / 2]);
-    inserted_index = (inserted_index - 1) / 2; // Update the inserted index
-  }
 }
 
 /*******************************/
@@ -73,20 +76,19 @@ void Heap<T>::insert(T value) {
 
 template <typename T>
 void Heap<T>::remove(T value) {
-   // Find the index of the value to remove
-  auto it = std::find(values.begin(), values.end(), value);
-
-  if (it == values.end()) {
-    // Value not found in the heap
-    return;
-  }
-   // Swap the value with the last element in the heap
-  std::swap(*it, values.back());
-  values.pop_back(); // Remove the value from the end
-
-  // Heapify the swapped element
-  heapify(std::distance(values.begin(), it));
+  // TO BE IMPLEMENTED
+    int index = 0;
+    for (int i = 0; i < values.size(); i++){
+        if (values.at(i) == value){
+            index = i;
+            break;
+        }
+    }
+    values.at(index) = values.at(values.size()-1);
+    values.pop_back();
+    heapify(index);
 }
+
 /*******************************/
 // find the smallest value in the heap
 /*******************************/
@@ -94,11 +96,7 @@ void Heap<T>::remove(T value) {
 template <typename T>
 T Heap<T>::getMin() {
   // TO BE IMPLEMENTED
-   if (values.empty()) {
-    throw std::out_of_range("Heap is empty");
-  }
-
-  return values[0]
+    return values.at(0);
 }
 
 /*******************************/
@@ -143,4 +141,12 @@ void Heap<T>::heapify(int parent_index) {
   }
 }
 
+
+// int main (){
+//   std::vector<int> start_values = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+//   Heap<int> heap(start_values);
+//   heap.insert(10);
+//   heap.remove(5);
+//   std::cout << heap.getMin() << std::endl;
+// }
 #endif
